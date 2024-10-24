@@ -2,13 +2,13 @@
 
 1. Create a Ubuntu 22.04 VM.
 
-1. Install `zsh`
+2. Install `zsh`
 
 ```
 sudo apt install zsh
 ```
 
-1. Create non-root user with `zsh`
+3. Create non-root user with `zsh`
 
 ```
 sudo useradd --create-home --shell /usr/bin/zsh NON_ROOT_USERNAME
@@ -16,7 +16,7 @@ echo NON_ROOT_USERNAME:PASSWORD | sudo chpasswd
 usermod --append --groups sudo NON_ROOT_USERNAME
 ```
 
-1. Enable SSH access for non-root user by copying `authorized_keys`.
+4. Enable SSH access for non-root user by copying `authorized_keys`.
 
 ```
 mkdir -p /home/NON_ROOT_USERNAME/.ssh
@@ -24,7 +24,7 @@ sudo cp ~/.ssh/authorized_keys /home/NON_ROOT_USERNAME/.ssh/
 sudo chown -R NON_ROOT_USERNAME:NON_ROOT_USERNAME /home/NON_ROOT_USERNAME/.ssh
 ```
 
-1. Install specific Python version for Ubuntu.
+15 Install specific Python version for Ubuntu.
 
 ```
 # For better UX, create a symbolic link python -> python3.
@@ -55,7 +55,7 @@ sudo apt-get install python3.13-distutils python3.13-dev python3.13-venv
 curl -sS https://bootstrap.pypa.io/get-pip.py | python
 ```
 
-1. Create a Python virtual environment.
+6. Create a Python virtual environment.
 
 ```
 python -m venv .venv
